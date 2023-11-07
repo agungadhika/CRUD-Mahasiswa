@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mahasiswa extends Model
 {
+    protected $fillable = ['nama', 'nim', 'jurusan'];
     use HasFactory;
 }

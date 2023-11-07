@@ -14,13 +14,9 @@ use App\Http\Controllers\MahasiswaController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/', [MahasiswaController::class, 'index']);
-Route::get('/mahasiswa/create', 'MahasiswaController@create')->name('mahasiswa.create');
-Route::get('/mahasiswa/{id}/edit', 'MahasiswaController@edit')->name('mahasiswa.edit');
-Route::delete('/mahasiswa/{id}', 'MahasiswaController@destroy')->name('mahasiswa.destroy');
-// Route::resource('mahasiswa', 'MahasiswaController');
-
-
+Route::get('/', [MahasiswaController::class, 'index'])->name('mahasiswa.index');
+Route::get('/create', [MahasiswaController::class, 'create'])->name('mahasiswa.create');
+Route::post('/', [MahasiswaController::class, 'store'])->name('mahasiswa.store');
+Route::get('/{id}/edit', [MahasiswaController::class, 'edit'])->name('mahasiswa.edit');
+Route::put('/{id}', [MahasiswaController::class, 'update'])->name('mahasiswa.update');
+Route::delete('/{id}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');

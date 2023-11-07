@@ -18,7 +18,11 @@
             <label for="jurusan">Jurusan:</label>
             <input type="text" name="jurusan" class="form-control" value="{{ $mahasiswa->jurusan }}" required>
         </div>
+        <div class="container mt-4">
+        <div class="text-right mb-2">
         <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+    </div>
+</div>
     </form>
 </div>
 @endsection

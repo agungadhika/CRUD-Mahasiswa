@@ -7,16 +7,17 @@ use App\Models\Mahasiswa;
 
 class MahasiswaController extends Controller
 {
+    // protected $fillable = ['nama', 'nim', 'jurusan'];
     public function index(){
     $mahasiswas = Mahasiswa::all();
     return view('mahasiswa.index', compact('mahasiswas'));
     }
 
-public function create(){
+    public function create(){
     return view('mahasiswa.create');
     }
 
-public function store(Request $request){
+    public function store(Request $request){
     $request->validate([
         'nama' => 'required',
         'nim' => 'required',
@@ -28,12 +29,12 @@ public function store(Request $request){
     return redirect()->route('mahasiswa.index')->with('success', 'Mahasiswa berhasil ditambahkan.');
     }
 
-public function edit($id){
+    public function edit($id){
     $mahasiswa = Mahasiswa::find($id);
     return view('mahasiswa.edit', compact('mahasiswa'));
     }
 
-public function update(Request $request, $id){
+    public function update(Request $request, $id){
     $request->validate([
         'nama' => 'required',
         'nim' => 'required',
@@ -45,7 +46,7 @@ public function update(Request $request, $id){
     return redirect()->route('mahasiswa.index')->with('success', 'Mahasiswa berhasil diperbarui.');
     }
 
-public function destroy($id){
+    public function destroy($id){
     Mahasiswa::find($id)->delete();
     return redirect()->route('mahasiswa.index')->with('success', 'Mahasiswa berhasil dihapus.');
     }

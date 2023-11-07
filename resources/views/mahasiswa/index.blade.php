@@ -3,7 +3,6 @@
 @section('content')
 <div class="container">
     <h2>Daftar Mahasiswa</h2>
-    <a href="{{ route('mahasiswa.create') }}" class="btn btn-primary mb-2">Tambah Mahasiswa</a>
     @if(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -36,5 +35,14 @@
             @endforeach
         </tbody>
     </table>
+    <div class="container mt-4">
+    <div class="text-right mb-2">
+        <a href="{{ route('mahasiswa.create') }}" class="btn btn-primary">Tambah Mahasiswa</a>
+    </div>
+
+    @yield('content') <!-- Ini adalah placeholder untuk isi halaman Anda -->
+</div>
+
+
 </div>
 @endsection

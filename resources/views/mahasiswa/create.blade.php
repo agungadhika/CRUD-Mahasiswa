@@ -17,7 +17,11 @@
             <label for="jurusan">Jurusan:</label>
             <input type="text" name="jurusan" class="form-control" required>
         </div>
+        <div class="container mt-4">
+        <div class="text-right mb-2">
         <button type="submit" class="btn btn-primary">Simpan</button>
     </form>
+</div>
+</div>
 </div>
 @endsection
